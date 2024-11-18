@@ -1,0 +1,31 @@
+CHIP Diff
+{
+	IN a[16], b[16];
+	OUT out[16];
+	PARTS:
+	Xor(a = a[0], b = b[0], out = nesto0);
+	Xor(a = a[1], b = b[1], out = nesto1);
+	Xor(a = a[2], b = b[2], out = nesto2);
+	Xor(a = a[3], b = b[3], out = nesto3);
+	Xor(a = a[4], b = b[4], out = nesto4);
+	Xor(a = a[5], b = b[5], out = nesto5);
+	Xor(a = a[6], b = b[6], out = nesto6);
+	Xor(a = a[7], b = b[7], out = nesto7);
+	Xor(a = a[8], b = b[8], out = nesto8);
+	Xor(a = a[9], b = b[9], out = nesto9);
+	Xor(a = a[10], b = b[10], out = nesto10);
+	Xor(a = a[11], b = b[11], out = nesto11);
+	Xor(a = a[12], b = b[12], out = nesto12);
+	Xor(a = a[13], b = b[13], out = nesto13);
+	Xor(a = a[14], b = b[14], out = nesto14);
+	Xor(a = a[15], b = b[15], out = nesto15);
+	
+	FullAdder(a = nesto0, b = nesto1, c = false, sum = out[0], carry = carry1);
+	FullAdder(a = nesto2, b = nesto3, c = carry1, sum = out[1], carry = carry2);
+	FullAdder(a = nesto4, b = nesto5, c = carry2, sum = out[2], carry = carry3);
+	FullAdder(a = nesto6, b = nesto7, c = carry3, sum = out[3], carry = carry4);
+	FullAdder(a = nesto8, b = nesto9, c = carry4, sum = out[4], carry = carry5);
+	FullAdder(a = nesto10, b = nesto11, c = carry5, sum = out[5], carry = carry6);
+	FullAdder(a = nesto12, b = nesto13, c = carry6, sum = out[6], carry = carry7);
+	FullAdder(a = nesto14, b = nesto15, c = carry7, sum = out[7], carry = carry8);
+}

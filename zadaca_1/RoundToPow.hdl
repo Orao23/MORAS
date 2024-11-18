@@ -1,0 +1,56 @@
+CHIP RoundToPow
+{
+	IN in[16];
+	OUT out[16];
+	PARTS:
+	Or(a = in[15], b = false, out = bit15);
+	Or(a = in[14], b = bit15, out = bit14ilivisi);
+	Or(a = in[13], b = bit14ilivisi, out = bit13ilivisi);
+	Or(a = in[12], b = bit13ilivisi, out = bit12ilivisi);
+	Or(a = in[11], b = bit12ilivisi, out = bit11ilivisi);
+	Or(a = in[10], b = bit11ilivisi, out = bit10ilivisi);
+	Or(a = in[9], b = bit10ilivisi, out = bit9ilivisi);
+	Or(a = in[8], b = bit9ilivisi, out = bit8ilivisi);
+	Or(a = in[7], b = bit8ilivisi, out = bit7ilivisi);
+	Or(a = in[6], b = bit7ilivisi, out = bit6ilivisi);
+	Or(a = in[5], b = bit6ilivisi, out = bit5ilivisi);
+	Or(a = in[4], b = bit5ilivisi, out = bit4ilivisi);
+	Or(a = in[3], b = bit4ilivisi, out = bit3ilivisi);
+	Or(a = in[2], b = bit3ilivisi, out = bit2ilivisi);
+	Or(a = in[1], b = bit2ilivisi, out = bit1ilivisi);
+	Or(a = in[0], b = bit1ilivisi, out = bit0ilivisi);
+	
+	Not(in = bit15, out = ne15);
+	Not(in = bit14ilivisi, out = ne14);
+	Not(in = bit13ilivisi, out = ne13);
+	Not(in = bit12ilivisi, out = ne12);
+	Not(in = bit11ilivisi, out = ne11);
+	Not(in = bit10ilivisi, out = ne10);
+	Not(in = bit9ilivisi, out = ne9);
+	Not(in = bit8ilivisi, out = ne8);
+	Not(in = bit7ilivisi, out = ne7);
+	Not(in = bit6ilivisi, out = ne6);
+	Not(in = bit5ilivisi, out = ne5);
+	Not(in = bit4ilivisi, out = ne4);
+	Not(in = bit3ilivisi, out = ne3);
+	Not(in = bit2ilivisi, out = ne2);
+	Not(in = bit1ilivisi, out = ne1);
+	Not(in = bit0ilivisi, out = ne0);
+
+	And(a = bit15, b = true, out = out[15]);
+	And(a = bit14ilivisi, b = ne15, out = out[14]);
+	And(a = bit13ilivisi, b = ne14, out = out[13]);
+	And(a = bit12ilivisi, b = ne13, out = out[12]);
+	And(a = bit11ilivisi, b = ne12, out = out[11]);
+	And(a = bit10ilivisi, b = ne11, out = out[10]);
+	And(a = bit9ilivisi, b = ne10, out = out[9]);
+	And(a = bit8ilivisi, b = ne9, out = out[8]);
+	And(a = bit7ilivisi, b = ne8, out = out[7]);
+	And(a = bit6ilivisi, b = ne7, out = out[6]);
+	And(a = bit5ilivisi, b = ne6, out = out[5]);
+	And(a = bit4ilivisi, b = ne5, out = out[4]);
+	And(a = bit3ilivisi, b = ne4, out = out[3]);
+	And(a = bit2ilivisi, b = ne3, out = out[2]);
+	And(a = bit1ilivisi, b = ne2, out = out[1]);
+	And(a = bit0ilivisi, b = ne1, out = out[0]);
+}
