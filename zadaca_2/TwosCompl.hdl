@@ -1,0 +1,40 @@
+CHIP TwosCompl
+{
+	IN in[16];
+	OUT out[16];
+	PARTS:
+    	Not(in=in[0],out=out0);
+    	Not(in=in[1],out=out1);
+    	Not(in=in[2],out=out2);
+    	Not(in=in[3],out=out3);
+    	Not(in=in[4],out=out4);
+    	Not(in=in[5],out=out5);
+    	Not(in=in[6],out=out6);
+    	Not(in=in[7],out=out7);
+    	Not(in=in[8],out=out8);
+    	Not(in=in[9],out=out9);
+    	Not(in=in[10],out=out10);
+    	Not(in=in[11],out=out11);
+    	Not(in=in[12],out=out12);
+    	Not(in=in[13],out=out13);
+    	Not(in=in[14],out=out14);
+    	Not(in=in[15],out=out15);
+
+
+	HalfAdder(a=out0, b=true, sum=out[0], carry=carry0);
+	HalfAdder(a=out1, b=carry0, sum=out[1], carry=carry1);
+	HalfAdder(a=out2, b=carry1, sum=out[2], carry=carry2);
+	HalfAdder(a=out3, b=carry2, sum=out[3], carry=carry3);
+	HalfAdder(a=out4, b=carry3, sum=out[4], carry=carry4);
+	HalfAdder(a=out5, b=carry4, sum=out[5], carry=carry5);
+	HalfAdder(a=out6, b=carry5, sum=out[6], carry=carry6);
+	HalfAdder(a=out7, b=carry6, sum=out[7], carry=carry7);
+	HalfAdder(a=out8, b=carry7, sum=out[8], carry=carry8);
+	HalfAdder(a=out9, b=carry8, sum=out[9], carry=carry9);
+	HalfAdder(a=out10, b=carry9, sum=out[10], carry=carry10);
+	HalfAdder(a=out11, b=carry10, sum=out[11], carry=carry11);
+	HalfAdder(a=out12, b=carry11, sum=out[12], carry=carry12);
+	HalfAdder(a=out13, b=carry12, sum=out[13], carry=carry13);
+	HalfAdder(a=out14, b=carry13, sum=out[14], carry=carry14);
+	HalfAdder(a=out15, b=carry14, sum=out[15], carry=carry15);
+}
