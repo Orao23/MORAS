@@ -1,0 +1,38 @@
+
+push constant 1 //a
+push constant 4 //b
+push constant 3 // c
+
+call Min.min 3
+
+pop static 0
+
+label END
+goto END
+
+function Min.min 3
+	push local 0
+	push local 1
+	push local 2
+	push argument 0
+	push argument 1
+	push argument 2
+	call Min.min1 2
+	call Min.min1 2
+	return
+
+function Min.min1 2
+	push argument 0
+	push argument 1
+	lt
+	if-goto A_LESS_B
+	goto B_LESS_A
+
+label A_LESS_B
+	push argument 0
+	return
+
+label B_LESS_A
+	push argument 1
+	return
+
